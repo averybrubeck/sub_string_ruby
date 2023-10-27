@@ -1,14 +1,18 @@
-dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
-
-def sub_string
-
-    string = gets.chomp.to_s.downcase
-    puts string
-
+def substrings(text, dictionary)
+    result = Hash.new(0)
+    lowered = text.downcase
+    
+    dictionary.each do |word|
+        matches = lowered.scan(word).length
+        result[word] = matches unless matches == 0
+    end      
+    puts result
 end
 
 
-sub_string
+
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+substrings("Howdy partner, sit down! How's it going?", dictionary)
 
 
     #scan string for matching chars'
